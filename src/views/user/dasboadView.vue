@@ -12,7 +12,7 @@ export default {
   methods: {
     goToDetail() {
       this.$router.push({
-        path: "user",
+        name: "user-detail",
         params: {
           id: 1,
         },

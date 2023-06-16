@@ -9,6 +9,9 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    meta: {
+      layout: "AppLayoutHome",
+    },
   },
   {
     path: "/about",
@@ -18,6 +21,9 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    meta: {
+      layout: "AppLayoutAbout",
+    },
   },
   {
     path: "/contact",
@@ -26,6 +32,9 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import("../views/ContactView.vue"),
+    meta: {
+      layout: 'AppLayoutContacts'
+    }
   },
   {
     path: "/user",
@@ -42,7 +51,7 @@ const routes = [
       },
       {
         path: ":id",
-        name: "user",
+        name: "user-detail",
         component: () => import("../views/user/userDetail.vue"),
       },
     ],

@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/contact">Contact</router-link> |
-      <router-link to="/user">User</router-link>
-    </nav>
-    <router-view/>
+    <AppLayout>
+      <router-view />
+    </AppLayout>
   </div>
 </template>
 
+<script>
+import AppLayout from "@/layouts/AppLayout";
+export default {
+  name: "App",
+  components: { AppLayout },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
